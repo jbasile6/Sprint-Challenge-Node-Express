@@ -21,14 +21,14 @@ router.get('/:id', (req, res) => {
         .catch( err => res.status(500).json({ error: 'There was an error getting this id\'s action' }))
 })
 
-//POST new action
+//POST new action- works!
 router.post('/', (req, res) => {
     Actions.insert(req.body)
         .then( newAction => res.status(200).json(newAction))
         .catch( err => res.status(500).json({ error: 'Error creating new action' }))
 })
 
-//PUT update an existing action by id
+//PUT update an existing action by id - works!
 router.put('/:id', (req, res) => {
     const id = req.params.id;
 
@@ -45,7 +45,7 @@ router.put('/:id', (req, res) => {
 })
 
 
-//DELETE action by id
+//DELETE action by id - works!
 router.delete('/:id', (req, res) => {
     const id = req.params.id;
 
