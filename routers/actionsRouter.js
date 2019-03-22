@@ -12,5 +12,8 @@ router.get('/', (req, res) => {
         .catch( err => res.status(500).json({ error: 'There was an error getting the data' }))
 })
 
+//GET actions by id
+
+
 
 module.exports = router;

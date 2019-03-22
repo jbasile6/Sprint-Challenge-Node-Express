@@ -12,5 +12,14 @@ router.get('/', (req, res) => {
         .catch( err => res.status(500).json({ error: 'There was an error getting the data' }))
 })
 
+//GET projects by id
+router.get('/:id', (req, res) => {
+    const id = req.params.id;
+
+    Projects.get(id)
+        .then( proj => res.status(200).json(proj))
+        .catch( err => res.status(500).json({ error: 'There was an error getting this id\'s data' }))
+})
+
 
 module.exports = router;
