@@ -21,5 +21,17 @@ router.get('/:id', (req, res) => {
         .catch( err => res.status(500).json({ error: 'There was an error getting this id\'s data' }))
 })
 
+//GET actions by project id
+router.get('/actions/:id', (req, res) => {
+    const id = req.params.id;
+
+    Projects.getProjectActions(id)
+        .then( actions => res.status(200).json(actions))
+        .catch( err => res.status(500).json({ error: 'Error getting this project\'s actions' }))
+})
+
+
+//POST new project
+
 
 module.exports = router;
