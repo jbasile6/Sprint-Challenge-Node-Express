@@ -24,15 +24,27 @@ In this challenge, create a web API around the following resources: `Projects` a
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] Mention two parts of Express that you learned about this week.
+- [x] Mention two parts of Express that you learned about this week.
 
-- [ ] Describe Middleware?
+1. I had some exposure to what back-end looks like after working with the back-end developer during this past build week. Other than that I had no experience working with back-end. This sounds pretty vague but just being introduced to how to build a functioning API and being able to understand routing from the back-end was interesting.
 
-- [ ] Describe a Resource?
+2. Another part of express that was new information was how to make the port dynamic using a .env file. It was something I hadn't considered despite having been introduced to the localhost port a few weeks ago.
 
-- [ ] What can the API return to help clients know if a request was successful?
+- [x] Describe Middleware?
 
-- [ ] How can we partition our application into sub-applications?
+Middleware is a list of functions that run in the order they are listed in the server code. Some middleware is built into express but needs to be called in order to use it in the application. There is also third party middleware, an example being helmet, which is installed as a dependency and custom middleware which are just functions we use to perform certain tasks( example: capitalizing an input value before it gets added to the database)
+
+- [x] Describe a Resource?
+
+The information in the database of the API that can be accessed and manipulated through the endpoints we create.
+
+- [x] What can the API return to help clients know if a request was successful?
+
+A status code. Specifically a code "200" which means the operation was successful.
+
+- [x] How can we partition our application into sub-applications?
+
+We can use express routers to split the application into sub-applications. 
 
 ## Project Setup
 
