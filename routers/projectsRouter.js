@@ -38,5 +38,21 @@ router.post('/', (req, res) => {
         .catch( err => res.status(500).json({ error: 'Error creating new project' }))
 })
 
+//PUT update an existing project by id
+router.put('/:id', (req, res) => {
+    const id = req.params.id;
+
+    Projects.update(id, req.body)
+        .then(update => {
+            if (!update) {
+                res.status(400).json({ error: 'Project id does not exist' })
+            } else {
+                res.status(200).json({ message: `Project id number ${id} has been updated`  })
+            }
+        })
+        .catch( err => res.status(500).json({ error: 'Error updating project' }))
+
+})
+
 
 module.exports = router;
