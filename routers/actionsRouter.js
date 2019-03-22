@@ -13,6 +13,13 @@ router.get('/', (req, res) => {
 })
 
 //GET actions by id
+router.get('/:id', (req, res) => {
+    const id = req.params.id;
+
+    Actions.get(id)
+        .then( action => res.status(200).json(action))
+        .catch( err => res.status(500).json({ error: 'There was an error getting this id\'s action' }))
+})
 
 
 
