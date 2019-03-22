@@ -25,5 +25,9 @@ server.get('/', (req, res) => {
     res.status(200).json({ greeting: 'BACKEND SPRINT 1 SPRINT CHALLENGE' }) 
 })
 
+server.get('/express_backend', (req, res) => {
+    res.send({ express: 'EXPRESS IS CONNECTED TO REACT' })
+})
+
 
 module.exports = server;
