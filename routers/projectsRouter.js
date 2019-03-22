@@ -32,6 +32,11 @@ router.get('/actions/:id', (req, res) => {
 
 
 //POST new project
+router.post('/', (req, res) => {
+    Projects.insert(req.body)
+        .then( newProj => res.status(200).json(newProj))
+        .catch( err => res.status(500).json({ error: 'Error creating new project' }))
+})
 
 
 module.exports = router;
